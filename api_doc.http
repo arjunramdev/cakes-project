@@ -1,0 +1,80 @@
+### all cakes list api
+
+GET http://127.0.0.1:8000/cakes/
+# Authorization: Basic user user
+
+
+### creating a cake
+
+POST http://127.0.0.1:8000/cakes/
+# Authorization: Basic admin admin
+Authorization: Token dad6bdf270a02e068799622c0b6c910b2802bd29
+Content-Type: multipart/form-data; boundary=abc
+
+--abc
+Content-Disposition: form-data; name="name"
+
+Chocolate Cake
+--abc
+Content-Disposition: form-data; name="description"
+
+Rich chocolate cake
+--abc
+Content-Disposition: form-data; name="photo"; filename="Screenshot_13.png"
+Content-Type: image/png
+
+< C:\Users\NABEEL\OneDrive\Desktop\Luminar\django rest projects\Cakes Project\image.jpeg
+--abc
+Content-Disposition: form-data; name="category"
+
+1
+--abc
+Content-Disposition: form-data; name="shape"
+
+1
+--abc
+Content-Disposition: form-data; name="weight"
+
+1
+--abc
+Content-Disposition: form-data; name="price"
+
+1000    
+--abc--
+
+
+
+###  cake retrieve api
+
+GET http://127.0.0.1:8000/cakes/1/
+
+
+
+
+### updating a cake
+
+PATCH  http://127.0.0.1:8000/cakes/1/
+Content-Type: multipart/form-data; boundary=abc
+
+--abc
+Content-Disposition: form-data; name="name"
+
+Chocolate Vancho Cake
+--abc--
+
+###  cake delete api
+
+DELETE  http://127.0.0.1:8000/cakes/1/
+
+
+### login api
+
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "nissan999@mailinator.com",
+    "first_name": "nissan12",
+    "role": "user",
+    "password": "nissan123"
+}
