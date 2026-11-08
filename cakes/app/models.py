@@ -80,6 +80,7 @@ class Cake(models.Model):
     weight = models.ForeignKey('Weight',on_delete=models.PROTECT)
 
     price = models.FloatField()
+    
 
     def __str__(self):
 
